@@ -1,11 +1,19 @@
+<div style="background-color: #000000">
+<img src="./assets/StackedDeckLogo.png" style="width:128px">
 <h1>Stacked Deck</h1>
+</div>
 
 <!-- Intro -->
+<body class="container">
+<div class="content-wrap">
+<div class="wrap">
 <p>Looking to challenge yourself with a deck unlike all of Runeterra? Test your luck and try your hand here with Stacked Deck!</p>
-<button (click)="randomizeRegions(); randomizeDeck(r1, r2); hideInfo = false;">Randomize Deck</button>
+</div>
+<button class="button" (click)="randomizeRegions(); randomizeDeck(r1, r2); hideInfo = false;">Randomize Deck</button>
 
 <!-- Regions -->
 <div *ngIf="!hideInfo">
+  <div style="padding-bottom: 25px">
   <img [src]="r1URL" alt="{{r1}}'s Icon">
   <p>{{r1}}</p>
   <div *ngIf="r1!=r2;">
@@ -15,13 +23,16 @@
 
   <!-- Deck Code -->
   <app-copy-to-clip [code]="code" [hideCode]="hideInfo"></app-copy-to-clip>
-
+  </div>
   <!-- Cards -->
   <app-card *ngFor="let card of deck" [data]="card"></app-card>
 </div>
+</div>
+</body>
 
-<footer>
+<footer class="wrap">
 <p>Stacked Deck isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Legends of Runeterra. Legends of Runeterra and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Legends of Runeterra © Riot Games, Inc.</p>
+<p>By Timothy Quach<br>© Copyright 2020</p>
 </footer>
 
 <router-outlet></router-outlet>

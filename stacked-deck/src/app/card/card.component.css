@@ -1,0 +1,13 @@
+img {
+	width:250px;
+	max-width: 100%;
+	background-color: none;
+	transition: 0.75s;
+}
+
+img:hover {
+	width: 265px;
+	background-color: #D5CE73;
+	box-shadow: 0 0 10px 10px #D5CE73; 
+	transition: 0.5s;
+}
