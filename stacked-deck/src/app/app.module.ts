@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { CopyToClipComponent } from './copy-to-clip/copy-to-clip.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

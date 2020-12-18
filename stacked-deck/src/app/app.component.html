@@ -2,11 +2,26 @@
 
 <!-- Intro -->
 <p>Looking to challenge yourself with a deck unlike all of Runeterra? Test your luck and try your hand here with Stacked Deck!</p>
+<button (click)="randomizeRegions(); randomizeDeck(r1, r2); hideInfo = false;">Randomize Deck</button>
 
-<!-- Deck Code -->
-<app-copy-to-clip [code]="localCode" [hideCode]="false"></app-copy-to-clip>
-<div>
-<app-card></app-card>
+<!-- Regions -->
+<div *ngIf="!hideInfo">
+  <img [src]="r1URL" alt="{{r1}}'s Icon">
+  <p>{{r1}}</p>
+  <div *ngIf="r1!=r2;">
+    <img [src]="r2URL" alt="{{r2}}'s Icon">
+    <p>{{r2}}</p>
+  </div>
+
+  <!-- Deck Code -->
+  <app-copy-to-clip [code]="code" [hideCode]="hideInfo"></app-copy-to-clip>
+
+  <!-- Cards -->
+  <app-card *ngFor="let card of deck" [data]="card"></app-card>
 </div>
+
+<footer>
+<p>Stacked Deck isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Legends of Runeterra. Legends of Runeterra and Riot Games are trademarks or registered trademarks of Riot Games, Inc. Legends of Runeterra © Riot Games, Inc.</p>
+</footer>
 
 <router-outlet></router-outlet>

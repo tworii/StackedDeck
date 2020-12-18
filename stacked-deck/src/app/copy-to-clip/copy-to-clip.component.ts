@@ -20,6 +20,5 @@ export class CopyToClipComponent implements OnInit {
   	text.focus();
   	text.select();
   	document.execCommand("copy");
-  	console.log(this.code);
   }
 }

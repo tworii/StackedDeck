@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CardData } from '../data/card-data';
 
 @Component({
   selector: 'app-card',
@@ -6,12 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  name:string = "";
-  region:string = "";
-  cardCode:string = "";
-  type:string = "";
-  imageURL:string = "https://dd.b.pvp.net/1_16_0/set1/en_us/img/cards/01IO015T2.png";
-  description:string = "test";
+  @Input() data:CardData;
 
   constructor() { }
 
